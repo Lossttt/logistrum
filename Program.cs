@@ -1,3 +1,4 @@
+using logistrum.Services;
 using Microsoft.EntityFrameworkCore;
 using ParcelBooking.Data;
 using ParcelBooking.Services;
@@ -13,6 +14,8 @@ builder.Services.AddControllersWithViews();
 
 // Initialize services
 builder.Services.AddScoped<IParcelIdService, ParcelIdService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 

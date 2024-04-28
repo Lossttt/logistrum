@@ -47,6 +47,15 @@ axiosInstance.interceptors.response.use(
   }
 );
 
+export const registerUser = async (email, password) => {
+  try {
+    const response = await axiosInstance.post('/Account/register', { email, password });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Function to make API calls
 async function makeApiCall(endpoint, method, { body = null, headers = {}, queryParams = {} } = {}) {
   const options = {

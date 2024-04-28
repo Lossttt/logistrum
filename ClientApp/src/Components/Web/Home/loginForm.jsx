@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Form, Button, Alert } from "react-bootstrap";
+import { registerUser } from "../../../services/Api/ApiConfig";
 
 const StyledContainer = styled.div`
   background-color: #93afa8;
@@ -43,7 +44,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [showPasswordWarning, setShowPasswordWarning] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     // Perform password validation (example: password must be at least 8 characters)
@@ -52,8 +53,16 @@ const LoginForm = () => {
       return;
     }
 
-    // Proceed with login logic if validation passes
-    console.log("Login with:", email, password);
+    try {
+      // Call the registerUser function to register the user
+      const result = await registerUser(email, password);
+      console.log("User registered successfully:", result);
+
+      // Proceed with login logic if registration succeeds
+      console.log("Login with:", email, password);
+    } catch (error) {
+      console.error("Error registering user:", error);
+    }
   };
 
   return (
