@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BookingForm from '../../Services/Util/formHandling';
+import BookingForm from '../../services/Util/formHandling';
 
 function BookingPage() {
   return (

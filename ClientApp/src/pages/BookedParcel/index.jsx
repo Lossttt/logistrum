@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DashboardHeader from "../../Components/DashboardHeader";
-import { get } from "../../Services/Api/ApiConfig";
-import { calculateRange } from "../../Services/Util/table-pagination";
+import DashboardHeader from "../../components/DashboardHeader";
+import { get } from "../../services/Api/ApiConfig";
+import { calculateRange } from "../../services/Util/table-pagination";
 import "../styles.css";
 
 function ParcelBookings() {

@@ -1,32 +1,29 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
-import './bookingPageStyle.css';
-import BookingPage from './Components/Booking/BookingPage';
+import "./bookingPageStyle.css";
+import "./App.css";
+import ParcelBookings from "./pages/BookedParcel";
+import sidebar_menu from "./constants/sidebar-menu";
+import SideBar from "./components/Sidebar";
 
-import './App.css';
-import ParcelBookings from './pages/BookedParcel';
-
-import sidebar_menu from './constants/sidebar-menu';
-import SideBar from './Components/Sidebar';
-
-function App () {
-  return(
-    <div className='dashboard-container'>
-      <SideBar menu={sidebar_menu} />
-        
-      <div className='dashboard-body'>
+import HomePage from "./components/Web/Home/homePage";
+import LoginForm from "./components/Web/Home/loginForm";
+const App = () => {
+  return (
+      <AnimatePresence mode="wait">
         <Routes>
-          <Route path="*" element={<div></div>} />
-          <Route exact path="/" element={<div></div>} />
-          <Route exact path="//booked-parcels" element={<ParcelBookings />} />
-          <Route exact path="/locations" element={<div></div>} />
-          <Route exact path="/profile" element={<div></div>} />
-          <Route exact path="/bookings" element={<BookingPage />} />
+          <Route path="/*" element={<HomePage />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
-      </div>
-    </div>
-  )
-}
+      </AnimatePresence>
+  );
+};
 
 export default App;

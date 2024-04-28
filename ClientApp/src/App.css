@@ -8,3 +8,23 @@
     flex-direction: column;
     background-color: #F0F2F5;
 }
+
+.slide-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.5); /* semi-transparent black background */
+    transform-origin: bottom;
+}
+
+.slide-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.5); /* semi-transparent black background */
+    transform-origin: top;
+}

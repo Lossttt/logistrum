@@ -1,0 +1,39 @@
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+
+import './bookingPageStyle.css';
+import BookingPage from './components/Booking/BookingPage';
+
+import './App.css';
+import ParcelBookings from './pages/BookedParcel';
+
+import sidebar_menu from './constants/sidebar-menu';
+import SideBar from './components/Sidebar';
+
+import HomePage from './components/Web/Home/homePage';
+function App () {
+  return(
+    <div>
+      <HomePage />
+    </div>
+    // <div className='dashboard-container'>
+    //   <SideBar menu={sidebar_menu} />
+        
+    //   <div className='dashboard-body'>
+    //     <Routes>
+    //       <Route path="*" element={<div></div>} />
+    //       <Route exact path="/" element={<div></div>} />
+    //       <Route exact path="//booked-parcels" element={<ParcelBookings />} />
+    //       <Route exact path="/locations" element={<div></div>} />
+    //       <Route exact path="/profile" element={<div></div>} />
+    //       <Route exact path="/bookings" element={<BookingPage />} />
+    //     </Routes>
+    //   </div>
+    // </div>
+  )
+}
+
+export default App;
+
+# ASP NET CORE IDENTITY
+- https://mahdi-karimipour.medium.com/implement-sign-up-with-react-redux-axios-google-recaptcha-and-asp-net-identity-9ab0f26778e9 
